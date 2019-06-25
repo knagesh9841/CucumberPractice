@@ -8,11 +8,12 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.crm.qa.listeners.TestListener;
+import com.crm.qa.loggerHelp.LoggerHelper;
 
 public class Reporter {
 	
 	static ExtentTest test;
-	private static Logger Log = Logger.getLogger(Reporter.class.getName());
+	private static Logger Log = LoggerHelper.getLogger(Reporter.class.getName());
 	
 	static SoftAssert softAssert = new SoftAssert();
 	

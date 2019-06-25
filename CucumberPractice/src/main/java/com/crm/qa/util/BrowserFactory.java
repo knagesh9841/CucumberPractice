@@ -11,13 +11,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
+import com.crm.qa.pages.WindowTestingPage;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserFactory {
 	
 	 private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	
-	 private static Logger Log = Logger.getLogger(BrowserFactory.class.getName());
+	 private static Logger Log = LoggerHelper.getLogger(BrowserFactory.class.getName());
 	 
 	 /**
 	  * Set the Driver as per Browser Name passed

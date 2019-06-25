@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import static com.crm.qa.objectrepository.ObjectRepository.*;
 
 import com.crm.qa.exceltestdata.ExcelUtils;
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
 import com.crm.qa.util.WaitUtilities;
@@ -27,7 +28,7 @@ public class AddressPage {
 	//*********Page Variables*********
 	
 	private WebDriver driver;
-    private static Logger Log = Logger.getLogger(AddressPage.class.getName());
+	private static Logger Log = LoggerHelper.getLogger(AddressPage.class.getName());
     String eMessage = "Address was successfully created.";
 	HashMap<String, String> testData = new HashMap<String,String>();
 	String testDataHolder;

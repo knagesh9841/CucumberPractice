@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import static com.crm.qa.objectrepository.ObjectRepository.*;
+
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.PropertyManager;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
@@ -20,7 +22,7 @@ public class TooltipPage {
 
 		private WebDriver driver;
 
-		private static Logger Log = Logger.getLogger(TooltipPage.class.getName());
+		private static Logger Log = LoggerHelper.getLogger(TooltipPage.class.getName());
 
 
 		//*********Constructor*********

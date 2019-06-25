@@ -11,6 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import com.crm.qa.loggerHelp.LoggerHelper;
+
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 
@@ -19,7 +21,7 @@ public class ExcelUtils {
 	
 	//*********Variables*********
 	
-	 private static Logger Log = Logger.getLogger(ExcelUtils.class.getName());
+	private static Logger Log = LoggerHelper.getLogger(ExcelUtils.class.getName());
 	 
 	 private static FileInputStream excelFile;
 	 private static XSSFSheet ExcelWSheet;

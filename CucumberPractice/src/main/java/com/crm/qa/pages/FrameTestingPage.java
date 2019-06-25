@@ -6,6 +6,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.PropertyManager;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
@@ -18,7 +20,7 @@ public class FrameTestingPage {
 		//*********Page Variables*********
 	
 		private WebDriver driver;
-	    private static Logger Log = Logger.getLogger(FrameTestingPage.class.getName());
+		private static Logger Log = LoggerHelper.getLogger(FrameTestingPage.class.getName());
 		HashMap<String, String> testData = new HashMap<String,String>();
 		String testDataHolder;
 		

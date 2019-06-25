@@ -19,6 +19,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.PropertyManager;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
@@ -29,7 +31,7 @@ public class DownloadPage {
 	//*********Page Variables*********
 	
 		private WebDriver driver;
-	    private static Logger Log = Logger.getLogger(DownloadPage.class.getName());
+		private static Logger Log = LoggerHelper.getLogger(DownloadPage.class.getName());
 		HashMap<String, String> testData = new HashMap<String,String>();
 		String testDataHolder;
 		String downloadDir = System.getProperty("user.dir") + File.separator + "externalFiles" + File.separator + "downloadFiles";

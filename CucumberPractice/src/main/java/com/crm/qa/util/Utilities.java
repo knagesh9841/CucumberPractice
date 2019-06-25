@@ -25,11 +25,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
+
 
 
 public class Utilities {
 	
-	static Logger Log = Logger.getLogger(Utilities.class.getName());
+	private static Logger Log = LoggerHelper.getLogger(Utilities.class.getName());
 	
 	/**
 	 * This method will upload file using Robot class.

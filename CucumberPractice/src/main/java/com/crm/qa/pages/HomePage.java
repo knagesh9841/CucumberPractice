@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import static com.crm.qa.objectrepository.ObjectRepository.*;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.WaitUtilities;
 
@@ -15,7 +16,7 @@ public class HomePage {
 	
 		private WebDriver driver;
 		
-		private static Logger Log = Logger.getLogger(HomePage.class.getName());
+		private static Logger Log = LoggerHelper.getLogger(HomePage.class.getName());
 		
 		
 		//*********Constructor*********

@@ -6,9 +6,11 @@ import org.testng.IInvokedMethodListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
+
 public class InvokedMethodListener implements IInvokedMethodListener {
 	
-	private static Logger Log = Logger.getLogger(InvokedMethodListener.class.getName());
+	Logger Log = LoggerHelper.getLogger(InvokedMethodListener.class.getName());
 
 	@Override
 	public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {

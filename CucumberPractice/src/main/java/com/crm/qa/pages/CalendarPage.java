@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.util.PropertyManager;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
@@ -22,7 +23,7 @@ public class CalendarPage {
 
 			private WebDriver driver;
 
-			private static Logger Log = Logger.getLogger(CalendarPage.class.getName());
+			private static Logger Log = LoggerHelper.getLogger(CalendarPage.class.getName());
 
 
 			//*********Constructor*********

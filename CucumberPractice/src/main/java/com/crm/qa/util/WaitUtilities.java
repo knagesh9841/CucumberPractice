@@ -13,11 +13,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.crm.qa.loggerHelp.LoggerHelper;
 import com.google.common.base.Function;
 
 public class WaitUtilities {
 	
-	static Logger Log = Logger.getLogger(WaitUtilities.class.getName());
+	private static Logger Log = LoggerHelper.getLogger(WaitUtilities.class.getName());
 
 	/**
 	 * Wait for an element is present on the DOM of a page and visible.Visibility means that the element is not only displayed but also has a height and width that isgreater than 0.
