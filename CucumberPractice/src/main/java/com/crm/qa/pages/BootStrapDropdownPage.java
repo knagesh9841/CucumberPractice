@@ -55,7 +55,7 @@ public class BootStrapDropdownPage {
 		public void verifyBootstrapDropdown(String menuOption)
 		{
 			try {
-				driver.get(PropertyManager.getInstance().getConfigTimeData("bootstrapdropdownurl"));
+				driver.get(PropertyManager.getConfigTimeData("bootstrapdropdownurl"));
 
 				Log.info("-----------Navigating to URL-------------");
 

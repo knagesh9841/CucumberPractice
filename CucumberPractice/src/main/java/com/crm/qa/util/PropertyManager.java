@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class PropertyManager {
 	
-	 private static PropertyManager instance;
+	 	private static PropertyManager instance;
 	    private static final Object lock = new Object();
 	    private static String propertyFilePath = System.getProperty("user.dir")+
 	            "\\src\\main\\java\\com\\crm\\qa\\resources\\config\\configuration.properties";
@@ -39,9 +39,10 @@ public class PropertyManager {
 	       
 	    }
 	    
-	    public String getConfigTimeData(String key)
+	    public static String getConfigTimeData(String key)
 	    {
-	    	return prop.getProperty(key);
+	    	return getInstance ().prop.getProperty(key);
+	    	
 	    }
 	 
 	   

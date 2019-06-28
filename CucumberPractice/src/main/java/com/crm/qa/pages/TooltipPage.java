@@ -53,7 +53,7 @@ public class TooltipPage {
 		{
 
 			try {
-				driver.get(PropertyManager.getInstance().getConfigTimeData("tooltipurl"));
+				driver.get(PropertyManager.getConfigTimeData("tooltipurl"));
 
 				Log.info("-----------Navigating to URL-------------");
 

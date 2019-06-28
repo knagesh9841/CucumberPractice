@@ -63,7 +63,7 @@ public class LoginPage {
 			
 			
 
-			driver.get(PropertyManager.getInstance().getConfigTimeData("basicurl"));
+			driver.get(PropertyManager.getConfigTimeData("basicurl"));
 
 			Log.info("-----------Navigating to URL-------------");
 			

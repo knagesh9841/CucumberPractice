@@ -64,7 +64,7 @@ public class BootStrapLoginWindowPage {
 	public void verifyBootstrapLoginWindow(String uname, String password)
 	{
 		try {
-			driver.get(PropertyManager.getInstance().getConfigTimeData("bootstraploginurl"));
+			driver.get(PropertyManager.getConfigTimeData("bootstraploginurl"));
 
 			Log.info("-----------Navigating to URL-------------");
 

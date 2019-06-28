@@ -53,7 +53,7 @@ public class CalendarPage {
 			{
 
 				try {
-					driver.get(PropertyManager.getInstance().getConfigTimeData("calendarurl"));
+					driver.get(PropertyManager.getConfigTimeData("calendarurl"));
 
 					Log.info("-----------Navigating to URL-------------");
 

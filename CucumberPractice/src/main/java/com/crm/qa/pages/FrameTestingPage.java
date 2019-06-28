@@ -49,7 +49,7 @@ public class FrameTestingPage {
 			
 			try {
 				
-				driver.get(PropertyManager.getInstance().getConfigTimeData("frameurl"));
+				driver.get(PropertyManager.getConfigTimeData("frameurl"));
 				
 				Log.info("-----------Navigating to URL-------------");
 				

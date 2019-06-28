@@ -62,7 +62,7 @@ public class DownloadPage {
 		public void verifyDownloadedFile()
 		{
 			try {
-				driver.get(PropertyManager.getInstance().getConfigTimeData("downloadurl"));
+				driver.get(PropertyManager.getConfigTimeData("downloadurl"));
 
 				Log.info("-----------Navigating to URL-------------");
 

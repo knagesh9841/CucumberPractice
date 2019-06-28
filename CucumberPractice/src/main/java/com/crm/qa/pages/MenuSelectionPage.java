@@ -62,7 +62,7 @@ public class MenuSelectionPage {
 	{
 		try {
 			
-			driver.get(PropertyManager.getInstance().getConfigTimeData("menuselectionurl"));
+			driver.get(PropertyManager.getConfigTimeData("menuselectionurl"));
 			
 			Log.info("-----------Navigating to URL-------------");
 			
