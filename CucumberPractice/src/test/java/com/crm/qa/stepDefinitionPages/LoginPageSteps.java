@@ -5,10 +5,8 @@ import org.apache.log4j.Logger;
 import com.crm.qa.context.TestContext;
 import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.PropertyManager;
-
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+
 
 public class LoginPageSteps {
 	
@@ -26,20 +24,15 @@ public class LoginPageSteps {
 		
 	}
 	
-	
-	@Given("User is able to login to application.")
-	public void user_is_able_to_login_to_application() throws InterruptedException {
+	@Given("User is able to login to application with valid credentials as {string} and {string}.")
+	public void user_is_able_to_login_to_application_with_valid_credentials_as_and(String userName, String password) throws Exception {
 	   
-		//loginPage.loginToApplication("knagesh143s@gmail.com", "knagesh143s");
+		String aTitle = loginPage.loginToApplication(userName, password);
 		
-		Log.info("Url: "+PropertyManager.getConfigTimeData("basicurl")+"");
 		
-	}
-
-	@Then("verify title of page.")
-	public void verify_title_of_page() {
-	   
-		//loginPage.verifyTitle("Address Book", "Address Book");
+		loginPage.verifyTitle(aTitle, "Address Book");
+		
+		Log.info("Step 'User is able to login to application with valid credentials as "+userName+" and "+password+"' is executed");
 	}
 	
 	

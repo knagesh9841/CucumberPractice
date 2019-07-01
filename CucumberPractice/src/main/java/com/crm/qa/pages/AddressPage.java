@@ -19,6 +19,7 @@ import static com.crm.qa.objectrepository.ObjectRepository.*;
 
 import com.crm.qa.exceltestdata.ExcelUtils;
 import com.crm.qa.loggerHelp.LoggerHelper;
+import com.crm.qa.testdata.Customer;
 import com.crm.qa.util.Reporter;
 import com.crm.qa.util.Utilities;
 import com.crm.qa.util.WaitUtilities;
@@ -122,13 +123,11 @@ public class AddressPage {
 	 * This method will fill address details and verify success message.
 	 */
 	
-	public void fillAddressDetails()
+	public void fillAddressDetails(Customer customer)
 	{
 		
 		
 		try {
-			
-			testData = ExcelUtils.loadData("ExcelTestDataFile.xlsx", "contacts", 1);
 			
 			
 			Utilities.clickByJavaScriptExecutor(driver, addressBtn);
@@ -148,13 +147,13 @@ public class AddressPage {
 			
 			WebElement fname = driver.findElement(byAddressPage_firstName);
 			
-			testDataHolder = ExcelUtils.getData(testData, "First Name");
+			testDataHolder = customer.firstName;
 			fname.sendKeys(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "Last Name");
+			testDataHolder =customer.lastName;
 			lname.sendKeys(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "Street");
+			testDataHolder = customer.address.street;
 			Actions act =  new Actions(driver);
 			act.moveToElement(street).click().keyDown(street, Keys.SHIFT).sendKeys(street, testDataHolder).keyUp(street, Keys.SHIFT).perform();
 			
@@ -163,20 +162,20 @@ public class AddressPage {
 			
 			street.sendKeys(testDataHolder);
 
-			testDataHolder = ExcelUtils.getData(testData, "Secondary Address");
+			testDataHolder = customer.address.secondaryAddress;
 			secondAddrs.sendKeys(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "City");
+			testDataHolder = customer.address.city;
 			city.sendKeys(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "State");
+			testDataHolder = customer.address.state;
 			Select stateToSelect = new Select(state);
 			stateToSelect.selectByValue(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "ZipCode");
+			testDataHolder = customer.address.zipCode;
 			zipCode.sendKeys(testDataHolder);
 			
-			testDataHolder = ExcelUtils.getData(testData, "Country");
+			testDataHolder = customer.address.country;
 			if(testDataHolder.equals("United State"))
 			{
 				if(!country.get(0).isSelected())
@@ -186,10 +185,10 @@ public class AddressPage {
 			}
 			
 			
-			testDataHolder = ExcelUtils.getData(testData, "Age");
+			testDataHolder = customer.age;
 			age.sendKeys(testDataHolder);
 
-			testDataHolder = ExcelUtils.getData(testData, "Website");
+			testDataHolder = customer.webSite;
 			website.sendKeys(testDataHolder);
 			
 			
@@ -198,11 +197,11 @@ public class AddressPage {
 			Utilities.uploadFileWithSikuli(System.getProperty("user.dir")+"\\Git.txt", uploadBtn, driver, System.getProperty("user.dir") + "\\UploadImages\\TextBox.PNG", System.getProperty("user.dir") + "\\UploadImages\\OpenButton.PNG");
 			
 			
-			testDataHolder = ExcelUtils.getData(testData, "Phone");
+			testDataHolder = customer.phoneNumber.home;
 			phone.sendKeys(testDataHolder);
 			
 			
-			testDataHolder = ExcelUtils.getData(testData, "Interest");
+			testDataHolder = customer.interest;
 			if(testDataHolder.equals("Climb"))
 			{
 				if(!interestClimb.isSelected())
@@ -211,7 +210,7 @@ public class AddressPage {
 				}
 			}
 			
-			testDataHolder = ExcelUtils.getData(testData, "Note");
+			testDataHolder = customer.note;
 			note.sendKeys(testDataHolder);
 			
 			submitBtn.click();

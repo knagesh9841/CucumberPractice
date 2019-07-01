@@ -1,0 +1,46 @@
+[	
+	{
+		"firstName": "Nagesh",
+		"lastName": "Kadam",
+		"age": "28",
+		"webSite": "http://a.testaddressbook.com/addresses/new",
+		"address": {
+			"street": "Datta Mandir Road",
+			"secondaryAddress": "Wanjarkheda",
+			"city": "Tq & Dist:-Latur",
+			"zipCode": "413 511",
+			"state": "GA",
+			"country": "United State"
+			},
+		"phoneNumber": {
+			"home": "1234567890"
+			
+		},
+		
+		"interest": "Climb",
+		"note": "Notes Added"
+	},
+	
+	{
+		"firstName": "Bappa",
+		"lastName": "Kadam",
+		"age": 35,
+		"webSite": "http://a.testaddressbook.com/addresses/new",
+		"address": {
+			"street": "Bhalekar Nagar Road",
+			"secondaryAddress": "Pimple Gurav",
+			"city": "Tq & Dist:-Latur",
+			"zipCode": "413 511",
+			"state": "GA",
+			"country": "United State"
+			
+		},
+		"phoneNumber": {
+			"home": "1234567890"
+			
+		},
+		
+		"interest": "Climb",
+		"note": "Notes Added"
+	}
+]

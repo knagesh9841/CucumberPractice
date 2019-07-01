@@ -1,5 +1,7 @@
 package com.crm.qa.cucumberPages;
 import org.openqa.selenium.WebDriver;
+
+import com.crm.qa.exceltestdata.JsonDataReader;
 import com.crm.qa.pages.*;
 
 
@@ -19,6 +21,7 @@ public class PageObjectManager {
 	private BootStrapDropdownPage bootStrapDropdownPage_Object;
 	private TooltipPage tooltipPage_Object;
 	private CalendarPage calendarPage_Object;
+	private static JsonDataReader jsonDataReader;
 	
 	
 	
@@ -100,6 +103,10 @@ public class PageObjectManager {
 		return (calendarPage_Object == null) ? calendarPage_Object = new CalendarPage(driver) : calendarPage_Object;
 
 	}
+	
+	public JsonDataReader getJsonReader(){
+		 return (jsonDataReader == null) ? new JsonDataReader() : jsonDataReader;
+		 }
 	
 
 }
