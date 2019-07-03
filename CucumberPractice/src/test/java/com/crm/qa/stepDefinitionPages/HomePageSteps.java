@@ -29,8 +29,11 @@ TestContext testContext;
 	@Then("user logout from application.")
 	public void user_logout_from_application() {
 	    
-		String aTitle = (String) testContext.scenarioContext.getContext(Context.HOMEPAGE_TITLE);
-		homePage.verifyTitle(aTitle, "Address Book - Sign In");
+		String aTitle = homePage.loginOutFromApplication();
+		
+		testContext.getScenarioContext().setContext(Context.HOMEPAGE_TITLE, aTitle);
+		String eTitle = (String) testContext.scenarioContext.getContext(Context.HOMEPAGE_TITLE);
+		homePage.verifyTitle(eTitle, "Address Book - Sign In");
 		
 	}
 

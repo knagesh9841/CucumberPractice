@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.crm.qa.context.TestContext;
-import com.crm.qa.enums.Context;
 import com.crm.qa.loggerHelp.LoggerHelper;
 import com.crm.qa.pages.AddressPage;
 import com.crm.qa.pages.HomePage;
@@ -66,9 +65,7 @@ public class AddressPageSteps {
 	    
 		addressPage.verifyDeletedAddressDetails();
 		
-		String aTitle = homePage.loginOutFromApplication();
 		
-		testContext.getScenarioContext().setContext(Context.HOMEPAGE_TITLE, aTitle);
 	}
 
 }
