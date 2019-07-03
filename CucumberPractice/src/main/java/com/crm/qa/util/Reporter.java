@@ -4,10 +4,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.crm.qa.listeners.TestListener;
+import com.crm.qa.hooks.Hooks;
 import com.crm.qa.loggerHelp.LoggerHelper;
 
 public class Reporter {
@@ -34,11 +33,11 @@ public class Reporter {
 			 	{
 			 		String screenshotPath = ScreenshotCapture.getScreenshot(driver, "screeshot");
 					
-					TestListener.getTest().info(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			 		Hooks.getTest().info(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 					
 			 	}else
 			 	{
-			 		TestListener.getTest().info(ExpectValue+"::"+aValue);
+			 		Hooks.getTest().info(ExpectValue+"::"+aValue);
 			 	}
 				
 			} catch (Exception e) {
@@ -67,11 +66,11 @@ public class Reporter {
 			{
 				String screenshotPath = ScreenshotCapture.getScreenshot(driver, "screeshot");
 
-				TestListener.getTest().pass(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				Hooks.getTest().pass(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 			}else
 			{
-				TestListener.getTest().pass(ExpectValue+"::"+aValue);
+				Hooks.getTest().pass(ExpectValue+"::"+aValue);
 			}
 
 		} catch (Exception e) {
@@ -95,7 +94,7 @@ public class Reporter {
 		 try {
 				String screenshotPath = ScreenshotCapture.getScreenshot(driver, "screeshot");
 				
-				TestListener.getTest().fail(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				Hooks.getTest().fail(ExpectValue+"::"+aValue, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				
 				if(isHardConstraint)
 				{

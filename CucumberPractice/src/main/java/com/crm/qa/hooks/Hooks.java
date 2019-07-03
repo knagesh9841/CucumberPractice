@@ -2,7 +2,10 @@ package com.crm.qa.hooks;
 
 import org.apache.log4j.Logger;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.crm.qa.loggerHelp.LoggerHelper;
+import com.crm.qa.util.ExtentManager;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -13,11 +16,15 @@ import cucumber.api.java.BeforeStep;
 public class Hooks {
 	
 	Logger Log = LoggerHelper.getLogger(Hooks.class.getName());
+	public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	private static ExtentReports extent = null;
 	
 	@Before()
     public void beforeScenarios(Scenario scenario){
 	
-		
+		extent = ExtentManager.getInstance();
+		ExtentTest extentTest = extent.createTest(scenario.getName());
+        test.set(extentTest);
 		Log.info("------------Scenario "+scenario.getName()+" is started.-------------");
 		
 		
@@ -43,5 +50,15 @@ public class Hooks {
 	{
 		Log.info("------------After Step is called.-------------");
 	}
+	
+	
+	/**
+	 * Get test 
+	 * @return
+	 */
+	
+    public synchronized static ExtentTest getTest () {
+        return test.get();
+    }
 
 }

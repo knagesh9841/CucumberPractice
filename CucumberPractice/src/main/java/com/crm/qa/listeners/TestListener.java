@@ -22,8 +22,7 @@ public class TestListener implements ITestListener{
 	synchronized public void onTestStart(ITestResult result) {
 		
 		Log.info("-----------"+result.getMethod().getMethodName() + " started.-----------");
-        ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName(),result.getMethod().getDescription());
-        test.set(extentTest);
+        
 		
 	}
 
@@ -31,15 +30,14 @@ public class TestListener implements ITestListener{
 	synchronized public void onTestSuccess(ITestResult result) {
 		
 		Log.info("-----------"+result.getMethod().getMethodName() + " passed-----------");
-		test.get().pass("Test case is passed");
+		
 	}
 
 	@Override
 	synchronized public void onTestFailure(ITestResult result) {
 		
 		Log.info("-----------"+result.getMethod().getMethodName() + " failed-----------");
-		test.get().fail("Test Case is Failed.");
-        test.get().fail(result.getThrowable());
+		
 		
 	}
 
@@ -47,8 +45,7 @@ public class TestListener implements ITestListener{
 	synchronized public void onTestSkipped(ITestResult result) {
 		
 		Log.info("-----------"+result.getMethod().getMethodName() + " skipped-----------"); 
-		test.get().info("Testcase is Skipped.");
-		test.get().skip(result.getThrowable());
+		
 	}
 
 	@Override
@@ -60,6 +57,9 @@ public class TestListener implements ITestListener{
 
 	@Override
 	synchronized public void onStart(ITestContext context) {
+		
+		
+		extent = ExtentManager.getInstance();
 		
 		Log.info("----------- Test Suite "+context.getName()+" started-----------");
 	}
@@ -76,13 +76,6 @@ public class TestListener implements ITestListener{
 		}
 	}
 	
-	/**
-	 * Get test 
-	 * @return
-	 */
 	
-    public synchronized static ExtentTest getTest () {
-        return test.get();
-    }
 
 }

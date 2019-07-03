@@ -3,6 +3,7 @@ package com.crm.qa.testRunner;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.crm.qa.util.BrowserFactory;
@@ -25,10 +26,12 @@ public class LoginTestNgRunner {
 	
 	 private TestNGCucumberRunner testNGCucumberRunner;
 	 
+	
 	 @BeforeClass(alwaysRun = true)
-	    public void setUpClass() throws Exception { 
+	 @Parameters({ "browser" })
+	    public void setUpClass(String browser) throws Exception { 
 		 	
-		 	BrowserFactory.setDriver("edge");
+		 	BrowserFactory.setDriver(browser);
 	        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	    }
 
