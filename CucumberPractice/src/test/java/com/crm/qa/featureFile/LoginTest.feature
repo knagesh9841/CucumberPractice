@@ -23,6 +23,8 @@ Feature: Verify user is able to login to Application.
 Background: Verify Background.
 Given User is able to login to application with valid credentials as "knagesh143s@gmail.com" and "knagesh143s".
 
+
+@End2EndTest @SmokeTest
 Scenario: Verify Address
 When User Enters address Details.
 	 | Customername  |
@@ -32,5 +34,6 @@ When User Deletes the Address Details.
 Then Address Should not be present.
 Then user logout from application.
 
+@SmokeTest
 Scenario: Login To Application
 Then user logout from application.

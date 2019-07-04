@@ -19,7 +19,9 @@ features = {"src/test/java/com/crm/qa/featureFile/LoginTest.feature"}
 ,plugin = { "html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml"},
-monochrome = true
+monochrome = true,
+tags = {"~@End2EndTest","@SmokeTest"},
+strict = true
 )
 
 public class LoginTestNgRunner {
