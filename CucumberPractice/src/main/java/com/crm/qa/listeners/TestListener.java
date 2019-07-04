@@ -1,21 +1,16 @@
 package com.crm.qa.listeners;
 
-import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.crm.qa.loggerHelp.LoggerHelper;
-import com.crm.qa.util.ExtentManager;
 
 public class TestListener implements ITestListener{
 	
-	private static ExtentReports extent = ExtentManager.createInstance();
-    public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	
+   
     Logger Log = LoggerHelper.getLogger(TestListener.class.getName());
 
 	@Override
@@ -58,9 +53,7 @@ public class TestListener implements ITestListener{
 	@Override
 	synchronized public void onStart(ITestContext context) {
 		
-		
-		extent = ExtentManager.getInstance();
-		
+	
 		Log.info("----------- Test Suite "+context.getName()+" started-----------");
 	}
 
@@ -68,12 +61,7 @@ public class TestListener implements ITestListener{
 	synchronized public void onFinish(ITestContext context) {
 		
 		Log.info("-----------Test Suite "+context.getName()+" is ending-----------");
-		extent.flush();
-		try {
-			ExtentManager.copyLatestExtentReport();
-		} catch (IOException e) {
-			
-		}
+		
 	}
 	
 	
