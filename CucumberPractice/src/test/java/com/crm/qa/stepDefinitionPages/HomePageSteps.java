@@ -35,6 +35,8 @@ TestContext testContext;
 		String eTitle = (String) testContext.scenarioContext.getContext(Context.HOMEPAGE_TITLE);
 		homePage.verifyTitle(eTitle, "Address Book - Sign In");
 		
+		Log.info("Step 'user logout from application.' is executed");
+		
 	}
 
 }

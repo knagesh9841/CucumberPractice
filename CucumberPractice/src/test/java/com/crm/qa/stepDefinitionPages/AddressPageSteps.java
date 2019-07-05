@@ -43,6 +43,8 @@ public class AddressPageSteps {
 		Customer customer = testContext.getPageObjectManager().getJsonReader().getCustomerByName(data.get(0).get("Customername"));
 		
 		addressPage.fillAddressDetails(customer);
+		
+		Log.info("Step 'User Enters address Details.' is executed");
 	   
 	}
 	
@@ -52,18 +54,25 @@ public class AddressPageSteps {
 	   
 		addressPage.verifyAddressDetails();
 		
+		Log.info("Step 'User verifies the Address Details. is executed");
+		
 	}
 
 	@When("User Deletes the Address Details.")
 	public void user_Deletes_the_Address_Details() {
 		
 		addressPage.deleteAddressDetails();
+		
+		Log.info("Step 'User Deletes the Address Details.' is executed");
+		
 	}
 
 	@Then("Address Should not be present.")
 	public void address_Should_not_be_present() {
 	    
 		addressPage.verifyDeletedAddressDetails();
+		
+		Log.info("Step 'Address Should not be present.' is executed");
 		
 		
 	}

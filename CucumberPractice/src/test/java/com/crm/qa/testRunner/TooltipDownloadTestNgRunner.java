@@ -14,7 +14,7 @@ import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-features = {"src/test/java/com/crm/qa/featureFile/TooltipDownloadMenu.feature"}
+features = {"src/test/java/com/crm/qa/featureFile/TooltipDownloadMenu.feature","src/test/java/com/crm/qa/featureFile/FileDownload.feature"}
 ,glue={"com.crm.qa.stepDefinitionPages","com.crm.qa.hooks"}
 ,plugin = { "html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",

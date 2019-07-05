@@ -20,7 +20,7 @@ features = {"src/test/java/com/crm/qa/featureFile/LoginTest.feature"}
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml"},
 monochrome = true,
-tags = {"~@End2EndTest","@SmokeTest"},
+tags = {},
 strict = true
 )
 
